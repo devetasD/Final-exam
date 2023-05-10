@@ -14,7 +14,7 @@ export function Login({ onLogin }) {
 
     const data = new FormData(event.nativeEvent.target);
 
-    if (validEmail.includes(data.get('email'))) {
+    if (!validEmail.includes(data.get('email'))) {
       setError(true);
       return;
     }
