@@ -16,7 +16,7 @@ export function BookingList() {
     try {
       const data = await listBookings();
 
-      setBookings(data);
+      setBookings(data.sort((a, b) => (a.date > b.date ? 1 : -1)));
     } catch (error) {
       console.error(error);
     }
